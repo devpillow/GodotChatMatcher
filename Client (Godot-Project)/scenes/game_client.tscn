@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://bb3mxu3ualip"]
+
+[ext_resource type="Script" uid="uid://0yvhlcmlf44f" path="res://scripts/game_client.gd" id="1_6hhug"]
+
+[node name="GameClient" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6hhug")
+
+[node name="logLbl" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.662
+offset_left = 26.0
+offset_bottom = -13.976
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="inputTxtBox" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 0.822
+anchor_bottom = 1.0
+offset_left = 52.0
+offset_top = -193.0
+offset_right = 0.0559692
+offset_bottom = -83.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="sendBtn" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.836
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.0720215
+offset_top = -195.0
+offset_right = -31.0
+offset_bottom = -73.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "send"
