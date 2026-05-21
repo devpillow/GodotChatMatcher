@@ -1,9 +1,11 @@
 # GodotChatMatcher
 ระบบจับคู่ผู้เล่น 2 คน เข้ามาอยู่ใน server เดียวกัน
--# เนื้อหาหลัก
+
+เนื้อหาหลัก
 - ระบบ Client-Server
 - Dedicated godot server
 - ระบบจับคู่ Node.js
+
 
 ## How it works -
 client เชื่อมต่อกับ server (node.js) ที่เปิดผ่าน WebSocket 
@@ -65,4 +67,24 @@ const args = [
   try {serverProcess = spawn(godotExecutable, args);
 //...
 }
+```
+หรือคำสั่ง
+```
+C:/Path/To/Godot_v4.exe --main-pack projectname.pck --headless
+```
+แต่แบบนี้จะไม่มี port จะต้องกำหนด port เพิ่มเป็น argurment เข้าไป
+```
+C:/Path/To/Godot_v4.exe --main-pack projectname.pck --headless --server-port=8081
+```
+ไฟล์ server.pck
+```
+func _ready():
+	# 1. อ่านค่า Arguments จาก Command Line
+	# รูปแบบคำสั่งที่ Node.js จะเรียกคือ: godot --headless --server-port=8082
+	var args = OS.get_cmdline_args()
+	for arg in args:
+		if arg.begins_with("--server-port="):
+			port = arg.get_slice("=", 1).to_int() # ดึงตัวเลขออกมา
+			
+	print("🚀 [GameServer] Preparing to start on port: ", port)
 ```
