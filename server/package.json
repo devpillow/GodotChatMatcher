@@ -1,0 +1,21 @@
+{
+  "name": "chatmatcher",
+  "version": "1.0.0",
+  "description": "learning matching system for basic",
+  "keywords": [
+    "matching",
+    "system"
+  ],
+  "license": "ISC",
+  "author": "RedPill",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "-",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "ws": "^8.20.1"
+  }
+}
