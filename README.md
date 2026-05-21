@@ -2,7 +2,6 @@
 ระบบจับคู่ผู้เล่น 2 คน เข้ามาอยู่ใน dedicated godot server เดียวกัน
 
 ## How it works -
-# การจับคู่
 client เชื่อมต่อกับ server (node.js) ที่เปิดผ่าน WebSocket 
 ```
 node server.js
@@ -11,7 +10,7 @@ node server.js
 -> client กดปุ่ม "จับคู่" client จะส่งข้อมูล "join_queue" ให้กับ server ทำให้ server เก็บ client เข้า queue
 -> เมื่อ queue ครบ 2 client -> server สร้าง dedicated server และ ส่งข้อมูลให้กับ client ว่าจับคู่ได้แล้ว พร้อมกับ IP,PORT สำหรับเชื่อมต่อ dedicated server
 
-# ระบบแชท / ส่งข้อความหากัน
+### ระบบแชท / ส่งข้อความหากัน
 - dedicated server คือไฟล์ godot อีกตัวนึง ทำหน้าที่สร้างห้องกฏเกมทิ้งไว้ให้ client ใช้ เชื่อมต่อโดย ENetMultiplayerPeer หรือ WebsocketMultiplayerPeer
 ```
 var game_peer = ENetMultiplayerPeer.new()
@@ -21,7 +20,6 @@ func connect_to_game_server(ip: String , port: int, room_id: String):
 	multiplayer.multiplayer_peer = game_peer
 ```
 - ในตัว dedicated server และ client มีการประกาศ RPC(Remote Procedure Call) Function เพื่อรองรับกับระบบ Client-Server
-# การทำงานคือ
 -> client ส่งข้อความ จะต้องเรียกใช้ function action_player_on_send_msg(message) -> function action_player_on_send_msg(message) ฝั่ง server ก็จะทำงานด้วย ซึ่งเนื้อหา function ของฝั่ง client/server ไม่จำเป็นต้องเหมือนกัน ทำให้จังหวะนี้ server ได้จังหวะประมวลข้อความ ก่อนที่ข้อความนี้จะส่งคืนกับ client ทั้งสองคน
 
 ```
@@ -35,7 +33,7 @@ func announce_to_all_players(message: String):
 ```
 
 
-# วิธีการติดตั้ง Dedicated godot server
+## วิธีการติดตั้ง Dedicated godot server
 -> เลือกฉากที่จะให้เป็น server -> export godot project เป็นไฟล์ .pck 
 *ข้อควรระวัง : เส้นทาง tree ของ godot server กับ client จะต้องเหมือนกัน เช่น
 ```
