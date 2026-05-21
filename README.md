@@ -1,5 +1,8 @@
 # GodotChatMatcher
-ระบบจับคู่ผู้เล่น 2 คน เข้ามาอยู่ใน dedicated godot server เดียวกัน
+ระบบจับคู่ผู้เล่น 2 คน เข้ามาอยู่ใน server เดียวกัน
+- เป็นระบบ Client-Server
+- Dedicated godot server
+- ระบบจับคู่ Node.js
 
 ## How it works -
 client เชื่อมต่อกับ server (node.js) ที่เปิดผ่าน WebSocket 
