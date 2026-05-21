@@ -1,7 +1,7 @@
 # GodotChatMatcher
 ระบบจับคู่ผู้เล่น (Matchmaking) แบบ 2 คน เพื่อจัดสรรห้องและดึงผู้เล่นเข้าสู่ Dedicated Server ตัวเดียวกันโดยอัตโนมัติ
 
-####เทคโนโลยีที่ใช้
+#### เทคโนโลยีที่ใช้
 - Node.js (Matchmaking & Process Management)
 - Godot Engine v4.x (Gameplay & Dedicated Server)
 - Protocol: WebSockets (คิวจับคู่) / ENet หรือ WebSockets (เซิร์ฟเวอร์เกม)
